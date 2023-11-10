@@ -98,6 +98,12 @@ export const PropiedadClient: React.FC<PropiedadClientProps> = ({
 
   const makeReserva = async() => {
     setIsLoading(true)
+
+    if(!currentUser) {
+      setIsLoading(false)
+      return router.push('/auth/login')
+    }
+
     const data = {
       startDate: format(reserva.dateRange.startDate, 'yyyy-MM-dd'),
       endDate: format(reserva.dateRange.endDate, 'yyyy-MM-dd'),

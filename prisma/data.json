@@ -16,9 +16,9 @@
     ],
     "estados_reserva": [
         "Activo",
-        "Pendiente",
         "Finalizado",
-        "Cancelado"
+        "Cancelado",
+        "Pendiente"
     ],
     "estados_reclamo": [
         "Activo",
