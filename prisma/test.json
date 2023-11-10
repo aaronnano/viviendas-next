@@ -1,0 +1,165 @@
+// Propiedad
+[
+    {
+        "id": 1,
+        "title": "Finca Hoton",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque minus maxime hic placeat iste, consectetur praesentium molestiae cumque in aut culpa nulla eum voluptatem officiis reprehenderit recusandae expedita odit corrupti! Nisi dolorum suscipit accusamus magnam quos in officiis delectus? At soluta error hic dolore sint quasi nisi accusantium ducimus ad provident mollitia voluptatibus, id illum illo! Consequatur dolorem laudantium ipsa!",
+        "ubicacion": "Country, State, mini_state, City, Address, Number",
+        //"Uruguay, Colonia, Colonia del Sacramento, Barrio Histórico, Avenida Aparicio Saravia, 896",
+
+        "location_code": "-34.4562522, -57.8392277",
+        "cant_ambientes": 3,
+        "max_personas": 2,
+        "precio_noche": 10.45,
+        "user": {
+            "name": "Fabian",
+            "image": "http://url_image"
+        },
+        "estado_propiedad": "Visible", // Visible, Oculto
+        "servicio": ["Wifi", "Desayuno", "Estacionamiento"],
+        "image_propiedad": "http://url_image"
+    },
+    {
+        "id": 2,
+        "title": "Abbey Cottage",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque minus maxime hic placeat iste, consectetur praesentium molestiae cumque in aut culpa nulla eum voluptatem officiis reprehenderit recusandae expedita odit corrupti! Nisi dolorum suscipit accusamus magnam quos in officiis delectus? At soluta error hic dolore sint quasi nisi accusantium ducimus ad provident mollitia voluptatibus, id illum illo! Consequatur dolorem laudantium ipsa!",
+        "ubicacion": "Chile, Santiago Metropolitan Region, Provincia de Santiago, Conchalí, Alberto González, 3275",
+        "location_code": "-34.4562522, -57.8392277",
+        "cant_ambientes": 1,
+        "max_personas": 2,
+        "precio_noche": 51.12,
+        "user": {
+            "name": "Octavio",
+            "image": ""
+        },
+        "estado_propiedad": "Visible",
+        "servicio": [0,2,3,5],
+        "image_propiedad": "/images/image_2.png"
+    },
+    {
+        "id": 3,
+        "title": "Rose Villa",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque minus maxime hic placeat iste, consectetur praesentium molestiae cumque in aut culpa nulla eum voluptatem officiis reprehenderit recusandae expedita odit corrupti! Nisi dolorum suscipit accusamus magnam quos in officiis delectus? At soluta error hic dolore sint quasi nisi accusantium ducimus ad provident mollitia voluptatibus, id illum illo! Consequatur dolorem laudantium ipsa!",
+        "ubicacion": "Country, State, Sub_state, City",
+        "location_code": "-34.4562522, -57.8392277",
+        "cant_ambientes": 1,
+        "max_personas": 6,
+        "precio_noche": 22.10,
+        "user": {
+            "name": "Fabian",
+            "image": ""
+        },
+        "estado_propiedad": "Visible",
+        "servicio": [1,4,2,6],
+        "image_propiedad": "/images/image_3.png"
+    },
+    {
+        "id": 4,
+        "title": "Driftwood Villa",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque minus maxime hic placeat iste, consectetur praesentium molestiae cumque in aut culpa nulla eum voluptatem officiis reprehenderit recusandae expedita odit corrupti! Nisi dolorum suscipit accusamus magnam quos in officiis delectus? At soluta error hic dolore sint quasi nisi accusantium ducimus ad provident mollitia voluptatibus, id illum illo! Consequatur dolorem laudantium ipsa!",
+        "ubicacion": "Argentina, Córdoba, Departamento Capital, Pedanía Capital, Almirante Guillermo Brown, 633",
+        "location_code": "-34.4562522, -57.8392277",
+        "cant_ambientes": 3,
+        "max_personas": 2,
+        "precio_noche": 30.70,
+        "user": {
+            "name": "Fabian",
+            "image": ""
+        },
+        "estado_propiedad": "Visible",
+        "servicio": [0,1,6,3,5],
+        "image_propiedad": "/images/image_4.png"
+    },
+    {
+        "id": 5,
+        "title": "The Golden Grotto",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque minus maxime hic placeat iste, consectetur praesentium molestiae cumque in aut culpa nulla eum voluptatem officiis reprehenderit recusandae expedita odit corrupti! Nisi dolorum suscipit accusamus magnam quos in officiis delectus? At soluta error hic dolore sint quasi nisi accusantium ducimus ad provident mollitia voluptatibus, id illum illo! Consequatur dolorem laudantium ipsa!",
+        "ubicacion": "Country, State, Sub_state",
+        "location_code": "-34.4562522, -57.8392277",
+        "cant_ambientes": 2,
+        "max_personas": 2,
+        "precio_noche": 30.70,
+        "user": {
+            "name": "Jorge",
+            "image": ""
+        },
+        "estado_propiedad": "Visible",
+        "servicio": [0,2,4,5],
+        "image_propiedad": "/images/image_6.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Willow Whimsy",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque minus maxime hic placeat iste, consectetur praesentium molestiae cumque in aut culpa nulla eum voluptatem officiis reprehenderit recusandae expedita odit corrupti! Nisi dolorum suscipit accusamus magnam quos in officiis delectus? At soluta error hic dolore sint quasi nisi accusantium ducimus ad provident mollitia voluptatibus, id illum illo! Consequatur dolorem laudantium ipsa!",
+        "ubicacion": "Country, State, Sub_state",
+        "location_code": "-34.4562522, -57.8392277",
+        "cant_ambientes": 2,
+        "max_personas": 2,
+        "precio_noche": 30.70,
+        "user": {
+            "name": "Fabian",
+            "image": ""
+        },
+        "estado_propiedad": "Visible",
+        "servicio": [1,3,4],
+        "image_propiedad": "/images/image_5.jpg"
+    },
+    {
+        "id": 7,
+        "title": "The Chic Chamber",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque minus maxime hic placeat iste, consectetur praesentium molestiae cumque in aut culpa nulla eum voluptatem officiis reprehenderit recusandae expedita odit corrupti! Nisi dolorum suscipit accusamus magnam quos in officiis delectus? At soluta error hic dolore sint quasi nisi accusantium ducimus ad provident mollitia voluptatibus, id illum illo! Consequatur dolorem laudantium ipsa!",
+        "ubicacion": "Country, State, Sub_state",
+        "location_code": "-34.4562522, -57.8392277",
+        "cant_ambientes": 4,
+        "max_personas": 2,
+        "precio_noche": 30.70,
+        "user": {
+            "name": "Fabian",
+            "image": ""
+        },
+        "estado_propiedad": "Visible",
+        "servicio": [0,5,2],
+        "image_propiedad": "/images/image_7.png"
+    },
+    {
+        // Propiedad 8
+    },
+    {
+        // Propiedad 9
+    }
+        // ...
+]
+
+
+// Servicios
+
+"servicios": [
+    "Wifi",
+    "Desayuno",
+    "Estacionamiento",
+    "Aire acondicionado",
+    "Ascensor",
+    "Pileta",
+    "Permite Mascotas",
+    "Acceso para personas con movilidad reducida"
+],
+
+
+// User
+[
+    {
+        "id": 1,
+        "name": "aaron2",  //username
+        "email": "aaron2@m.com",
+        "image": "http://url_image",  // null
+        "tipo_usuario": { 
+            "id": 2,  // 1
+            "tipo_usuario": "Propietario"  // "Cliente"
+        }
+    },
+    {
+        {
+
+        }
+    }
+]

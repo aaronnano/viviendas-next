@@ -1,0 +1,34 @@
+{
+    "servicios": [
+        "Wifi",
+        "Desayuno",
+        "Estacionamiento",
+        "Aire acondicionado",
+        "Ascensor",
+        "Pileta",
+        "Permite Mascotas",
+        "Acceso para personas con movilidad reducida"
+    ],
+    "tipo_usuario": [
+        "Cliente",
+        "Propietario",
+        "Admin"
+    ],
+    "estados_reserva": [
+        "Activo",
+        "Pendiente",
+        "Finalizado",
+        "Cancelado"
+    ],
+    "estados_reclamo": [
+        "Activo",
+        "Finalizado"
+    ],
+    "estados_propiedad": [
+        "Visible",
+        "Oculto"
+    ],
+    "users": {
+        
+    }
+}

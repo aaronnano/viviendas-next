@@ -1,0 +1,181 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      =  env("DATABASE_URL")
+}
+
+model User {
+  id              Int @id @default(autoincrement()) @map("id")
+  fullname        String?
+  name            String
+  email           String? @unique
+  image           String?
+  hashedPassword  String?
+  createAt        DateTime @default(now())
+  updateAt        DateTime @updatedAt
+
+  tipo_usuario Tipo_usuario @relation(fields: [id_tipo_usuario], references: [id], onDelete: Cascade)
+  id_tipo_usuario Int
+
+  reservas      Reserva[]
+  propiedades   Propiedad[]
+  reclamos   Reclamo[]
+
+  //# For Token-Auth #
+  emailVerified   DateTime?
+  accounts Account[]
+  sessions Session[]
+}
+
+model Tipo_usuario {
+  id              Int @id @default(autoincrement()) @map("id")
+  tipo_usuario    String
+  usuarios     User[]
+}
+
+
+model Propiedad {
+  id              Int @id @default(autoincrement()) @map("id")
+  title           String
+  description     String  @db.LongText
+  ubicacion       String
+  location_code   String
+  cant_ambientes  Int
+  max_personas    Int
+  precio_noche    Decimal
+  
+  //createdAt DateTime @default(now())
+
+  user User @relation(fields: [id_user], references: [id], onDelete: Cascade)
+  id_user Int
+  estado_propiedad Estado_propiedad @relation(fields: [id_estado_propiedad], references: [id], onDelete: Cascade)
+  id_estado_propiedad Int
+
+  reservas         Reserva[]
+  images_propiedad Image_propiedad[]
+  servicios        Servicio[]  @relation("propiedad_servicio")
+}
+
+model Servicio {
+  id              Int @id @default(autoincrement()) @map("id")
+  servicio        String
+  propiedades     Propiedad[]  @relation("propiedad_servicio")
+}
+
+model Image_propiedad {
+  id              Int @id @default(autoincrement()) @map("id")
+  image           String
+  propiedad Propiedad @relation(fields: [id_propiedad], references: [id])
+  id_propiedad Int
+}
+
+model Estado_propiedad {
+  id              Int @id @default(autoincrement()) @map("id")
+  estado          String
+  propiedades     Propiedad[]
+}
+
+
+
+model Reserva {
+  id              Int @id @default(autoincrement()) @map("id")
+  pago_total      Decimal
+  start_date      DateTime?
+  end_date        DateTime?
+  huespedes       Int
+  createdAt       DateTime @default(now())
+
+
+  user User @relation(fields: [id_user], references: [id], onDelete: Cascade)
+  id_user  Int
+  propiedad Propiedad @relation(fields: [id_propiedad], references: [id], onDelete: Cascade)
+  id_propiedad  Int
+  estado_reserva Estado_reserva @relation(fields: [id_estado_reserva], references: [id], onDelete: Cascade)
+  id_estado_reserva Int
+
+  reclamos Reclamo[]
+
+}
+
+model Estado_reserva {
+  id              Int @id @default(autoincrement()) @map("id")
+  estado          String
+  reservas        Reserva[]
+}
+
+
+
+model Reclamo {
+  id              Int @id @default(autoincrement()) @map("id")
+  reclamo         String  @db.Text
+  create_date     DateTime
+  resolution_date DateTime
+
+  user User @relation(fields: [id_user], references: [id], onDelete: Cascade)
+  id_user  Int
+  reserva Reserva @relation(fields: [id_reserva], references: [id], onDelete: Cascade)
+  id_reserva  Int
+  estado_reclamo Estado_reclamo @relation(fields: [id_estado_reclamo], references: [id], onDelete: Cascade)
+  id_estado_reclamo Int
+
+  images_reclamo Image_reclamo[]
+
+}
+
+model Estado_reclamo {
+  id              Int @id @default(autoincrement()) @map("id")
+  estado          String
+  reclamos        Reclamo[]
+}
+
+model Image_reclamo {
+  id              Int @id @default(autoincrement()) @map("id")
+  image           String
+  reclamo Reclamo @relation(fields: [id_reclamo], references: [id])
+  id_reclamo Int
+}
+
+
+
+//# For Token-Auth #
+model Account {
+  id Int @id @default(autoincrement()) @map("id")
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?  @db.Text
+  access_token       String?  @db.Text
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?  @db.Text
+  session_state      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId             Int
+
+  @@unique([provider, providerAccountId])
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId       Int
+}
+
