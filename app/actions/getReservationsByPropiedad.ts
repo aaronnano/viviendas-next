@@ -30,13 +30,14 @@ export default async function getReservationsByPropiedad(
         },
       }
     })
-      
+  
+
     reservas = reservas.map((res: any) => {
       const item = {
         ...res,
         pago_total: +res.pago_total,
-        start_date: format(addDays(res.start_date, 1), 'yyyy-MM-dd'),
-        end_date: format(addDays(res.end_date,1), 'yyyy-MM-dd'),
+        start_date: res.start_date.toISOString().split('T')[0],
+        end_date: res.end_date.toISOString().split('T')[0],
         estado_reserva: res.estado_reserva.estado,
         propiedad: {
           ...res.propiedad,
