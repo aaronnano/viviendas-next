@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "push-seed": "yarn prisma db push && yarn prisma db seed"
+    "push-seed": "yarn prisma db push && yarn prisma db seed",
+    "postinstall": "prisma generate"
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"none\"} prisma/seed.ts"
