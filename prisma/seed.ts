@@ -8,32 +8,32 @@ const load = async () => {
   try {
     
     
-    // #### Servicios ####
-    await prisma.servicio.createMany({
-        data: data.servicios.map((item => ({ servicio: item })))
-    })
+    // // #### Servicios ####
+    // await prisma.servicio.createMany({
+    //     data: data.servicios.map((item => ({ servicio: item })))
+    // })
     
-    // #### Tipo_usuario ####
-    await prisma.tipo_usuario.createMany({
-        data: data.tipo_usuario.map((item => ({ tipo_usuario: item })))
-    })
+    // // #### Tipo_usuario ####
+    // await prisma.tipo_usuario.createMany({
+    //     data: data.tipo_usuario.map((item => ({ tipo_usuario: item })))
+    // })
     
-    // #### estado_reservas ####
-    await prisma.estado_reserva.createMany({
-        data: data.estados_reserva.map((item => ({ estado: item })))
-    })
+    // // #### estado_reservas ####
+    // await prisma.estado_reserva.createMany({
+    //     data: data.estados_reserva.map((item => ({ estado: item })))
+    // })
     
-    // #### estado_reclamo ####
-    await prisma.estado_reclamo.createMany({
-        data: data.estados_reclamo.map((item => ({ estado: item })))
-    })
+    // // #### estado_reclamo ####
+    // await prisma.estado_reclamo.createMany({
+    //     data: data.estados_reclamo.map((item => ({ estado: item })))
+    // })
 
-    // #### estado_propiedad ####
-    await prisma.estado_propiedad.createMany({
-        data: data.estados_propiedad.map((item => ({ estado: item })))
-    })
+    // // #### estado_propiedad ####
+    // await prisma.estado_propiedad.createMany({
+    //     data: data.estados_propiedad.map((item => ({ estado: item })))
+    // })
 
-    // // #### Propiedades ####
+    // #### Propiedades ####
     // await prisma.propiedad.createMany({
     //   data: propiedades.map(p => ({
     //     title: p.title,
@@ -48,7 +48,7 @@ const load = async () => {
     //   }))
     // })
 
-    // // ### Propiedad_image
+    // ### Propiedad_image
     // propiedades.map(async p => {
     //   await prisma.image_propiedad.create({
     //     data: {
@@ -61,23 +61,23 @@ const load = async () => {
 
 
     
-    // // // ### Propiedad_Servicios
-    // const servicios = await prisma.servicio.findMany({})
+    // // ### Propiedad_Servicios
+    const servicios = await prisma.servicio.findMany({})
 
-    // propiedades.map(async p => {
-    //   const res = servicios.filter(item => p.servicios.includes(item.servicio))
+    propiedades.map(async p => {
+      const res = servicios.filter(item => p.servicios.includes(item.servicio))
 
-    //   await prisma.propiedad.update({
-    //     where: {
-    //       id: p.id
-    //     },
-    //     data: {
-    //       servicios: {
-    //         connect: res.map(item => ({id: item.id}))
-    //       } 
-    //     }
-    //   })
-    // })
+      await prisma.propiedad.update({
+        where: {
+          id: p.id
+        },
+        data: {
+          servicios: {
+            connect: res.map(item => ({id: item.id}))
+          } 
+        }
+      })
+    })
 
 
 

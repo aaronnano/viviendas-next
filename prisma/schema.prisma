@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      =  env("DATABASE_URL")
 }
 
@@ -43,7 +43,7 @@ model Tipo_usuario {
 model Propiedad {
   id              Int @id @default(autoincrement()) @map("id")
   title           String
-  description     String  @db.LongText
+  description     String  @db.Text
   ubicacion       String
   location_code   String
   cant_ambientes  Int
