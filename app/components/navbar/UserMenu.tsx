@@ -158,10 +158,10 @@ export const UserMenu: React.FC<UserMenuProps> = ({
               <div className="flex flex-col cursor-pointer">
                 {tipoUsuario === 'Propietario' ? (
                 <>
-                  <MenuItem 
+                  {/* <MenuItem 
                     onClick={onRent}
                     label='Test'
-                  />
+                  /> */}
                   <MenuItem 
                     onClick={() => router.push('/propiedad/all')}
                     label='Mis Propiedades'
@@ -182,10 +182,10 @@ export const UserMenu: React.FC<UserMenuProps> = ({
                 </>
                 ): tipoUsuario === 'Cliente' ? (
                 <>
-                  <MenuItem 
+                  {/* <MenuItem 
                     onClick={onRent}
                     label='Test'
-                  />
+                  /> */}
                   <MenuItem 
                     onClick={() => router.push('/reservas')}
                     label='Mis Reservas'
